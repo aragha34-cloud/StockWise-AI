@@ -1,0 +1,61 @@
+{
+  "info": {
+    "name": "StockWise API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3001/health"
+      }
+    },
+    {
+      "name": "Get Stock Data",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3001/api/stock/AAPL"
+      }
+    },
+    {
+      "name": "Get Portfolio",
+      "request": {
+        "method": "GET",
+        "header": [{"key": "user-id", "value": "1"}],
+        "url": "http://localhost:3001/api/portfolio"
+      }
+    },
+    {
+      "name": "Get Holdings",
+      "request": {
+        "method": "GET",
+        "header": [{"key": "user-id", "value": "1"}],
+        "url": "http://localhost:3001/api/portfolio/holdings"
+      }
+    },
+    {
+      "name": "Add Holding",
+      "request": {
+        "method": "POST",
+        "header": [
+          {"key": "user-id", "value": "1"},
+          {"key": "Content-Type", "value": "application/json"}
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"symbol\": \"MSFT\",\n  \"companyName\": \"Microsoft\",\n  \"shares\": 5,\n  \"pricePerShare\": 374.23,\n  \"purchaseDate\": \"2025-11-06\"\n}"
+        },
+        "url": "http://localhost:3001/api/portfolio/holdings"
+      }
+    },
+    {
+      "name": "Get Market Stocks",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3001/api/market/stocks"
+      }
+    }
+  ]
+}
+
