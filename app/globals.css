@@ -1,19 +1,19 @@
-// ... existing code ...
-
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    border-color: var(--border);
+    outline-color: var(--ring);
   }
+
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--background);
+    color: var(--foreground);
   }
-  
-  /* <CHANGE> Add glowing text effect for active navigation and special text */
+
   .glow-text {
     text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
     animation: pulse-glow 2s ease-in-out infinite;
   }
-  
+
   @keyframes pulse-glow {
     0%, 100% {
       text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
@@ -24,12 +24,12 @@
       opacity: 0.9;
     }
   }
-  
+
   .glow-border {
     box-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
     animation: pulse-border 2s ease-in-out infinite;
   }
-  
+
   @keyframes pulse-border {
     0%, 100% {
       box-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
