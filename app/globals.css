@@ -1,16 +1,17 @@
 @layer base {
   * {
-    /* use plain CSS that references your theme variables instead of Tailwind utilities */
+    /* replaced Tailwind utilities with explicit CSS using your variables */
+    box-sizing: border-box;
     border: 1px solid var(--color-border);
+    outline: none;
     outline-offset: 2px;
   }
 
   body {
-    /* keep using Tailwind for these if they work, otherwise use variables */
+    /* keep using Tailwind variables if you want; if `bg-background` is a CSS variable token, it will work */
     @apply bg-background text-foreground;
   }
 
-  /* keep your custom glow classes below */
   /* <CHANGE> Add glowing text effect for active navigation and special text */
   .glow-text {
     text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
